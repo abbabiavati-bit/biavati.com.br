@@ -1,0 +1,72 @@
+### Node/React/JS
+
+# Dependencies
+node_modules/
+
+# Builds / Outputs
+dist/
+build/
+.next/
+out/
+storybook-static/
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Caches
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+.turbo/
+.swc/
+.vite/
+*.tsbuildinfo
+
+# Testing Artifacts
+cypress/screenshots/
+cypress/videos/
+playwright-report/
+test-results/
+.playwright/
+
+# Env Files
+.env
+.env.local
+.env.*
+.env.*.local
+.envrc
+!.env.example
+!.env.sample
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Vercel
+.vercel/
+
+# Yarn PnP / Berry
+.pnp.*
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.yarn/offline-mirror
+
+# Misc
+*.tgz
+node_repl_history

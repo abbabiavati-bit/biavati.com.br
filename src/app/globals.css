@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global tweaks */
+:root {
+  --bg: #ffffff;
+  --fg: #0f172a; /* slate-900 */
+}
+
+html, body {
+  height: 100%;
+}
+
+::selection {
+  background: theme('colors.primary.200');
+}
+
