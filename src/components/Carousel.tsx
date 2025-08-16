@@ -1,4 +1,4 @@
-"use client";
+// Vite/React client component
 import { useRef } from 'react'
 import { getWhatsAppLink } from '@/lib/links'
 

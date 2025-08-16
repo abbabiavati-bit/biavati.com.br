@@ -1,4 +1,4 @@
-"use client";
+// Vite/React client component
 import { useEffect, useState } from 'react'
 import { getWhatsAppLink } from '@/lib/links'
 
@@ -15,7 +15,7 @@ const rightLinks = [
 const mobileLinks = [
   ...leftLinks,
   ...rightLinks,
-  { href: '/atami', label: 'Atami & Solécia' },
+  { href: '/atami/index.html', label: 'Atami & Solécia' },
 ]
 
 export default function SiteHeader() {

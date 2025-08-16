@@ -32,8 +32,9 @@ function extractVimeoId(url: string): string | null {
 }
 
 export function getHeroMedia(): HeroMedia | null {
-  const raw = process.env.NEXT_PUBLIC_HERO_MEDIA_URL?.trim()
-  const poster = process.env.NEXT_PUBLIC_HERO_VIDEO_POSTER?.trim()
+  const env = (import.meta as any).env || {}
+  const raw = (env.VITE_HERO_MEDIA_URL || env.NEXT_PUBLIC_HERO_MEDIA_URL || '').toString().trim()
+  const poster = (env.VITE_HERO_VIDEO_POSTER || env.NEXT_PUBLIC_HERO_VIDEO_POSTER || '').toString().trim()
   if (!raw) return null
 
   // Detect providers

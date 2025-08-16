@@ -1,7 +1,10 @@
 export function getWhatsAppLink(opts?: { message?: string }) {
-  const phone = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, '') || '5541999999999'
+  const env = (import.meta as any).env || {}
+  const phone = (env.VITE_WHATSAPP_NUMBER || env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5541999999999')
+    .toString()
+    .replace(/\D/g, '')
   const defaultMessage = (
-    process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE ||
+    env.VITE_WHATSAPP_MESSAGE || env.NEXT_PUBLIC_WHATSAPP_MESSAGE ||
     [
       'Olá, sou [Seu Nome].',
       'Encontrei a Biavati Imóveis pelo site e gostaria de receber uma seleção personalizada de imóveis alinhada ao meu perfil.',

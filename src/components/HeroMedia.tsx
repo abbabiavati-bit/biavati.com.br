@@ -1,4 +1,4 @@
-"use client";
+// Vite/React client component
 import { useEffect, useState } from 'react'
 import type { HeroMedia as Media } from '@/lib/media'
 
@@ -134,4 +134,3 @@ export default function HeroMedia({ media, className = '' }: { media: Media; cla
     </div>
   )
 }
-

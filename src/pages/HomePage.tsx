@@ -8,7 +8,7 @@ export default function HomePage() {
   const hero = getHeroMedia()
   return (
     <div>
-      {/* Luxury-inspired Hero */}
+      {/* Hero */}
       <section className="relative h-[78vh] min-h-[560px] w-full">
         <img
           src="/images/biavati/68347948ad3470d7bcedca5e_DJI_0508-1536x864.webp"
@@ -50,7 +50,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured properties (Charles Marlow style) */}
+      {/* Destaques */}
       <section id="imoveis" className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
         <div className="flex items-end justify-between">
           <div>
@@ -60,7 +60,6 @@ export default function HomePage() {
           </div>
           <a href="#contato" className="hidden text-sm font-medium text-primary-700 hover:text-primary-800 link-underline sm:inline">Ver todos →</a>
         </div>
-        {/* Mobile carousel */}
         <div className="mt-8 sm:hidden">
           <Carousel
             items={[
@@ -70,7 +69,6 @@ export default function HomePage() {
             ]}
           />
         </div>
-        {/* Desktop grid with overlay captions */}
         <div className="mt-8 hidden gap-6 sm:grid sm:grid-cols-2 lg:grid-cols-3">
           {[ 
             { img: '/images/biavati/683479760428b0607828df06_Praia-de-Pontal-do-Sul-small.webp', title: 'Casa pé na areia', loc: 'Pontal do Sul', ref: 'BIA-001' },
@@ -101,6 +99,7 @@ export default function HomePage() {
           <a href="#contato" className="text-sm font-medium text-primary-700 hover:text-primary-800 link-underline">Ver todos →</a>
         </div>
       </section>
+
       {/* Sobre */}
       <section id="sobre" className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
@@ -112,9 +111,7 @@ export default function HomePage() {
               residenciais e comerciais no litoral e nas principais cidades do Paraná. Nossa abordagem é
               discreta, precisa e orientada a resultado, com foco em apresentação, posicionamento e negociação.
             </p>
-            <p className="mt-3 text-slate-700">
-              Indicamos parceiros de confiança para reforma, interiores e administração patrimonial.
-            </p>
+            <p className="mt-3 text-slate-700">Indicamos parceiros de confiança para reforma, interiores e administração patrimonial.</p>
           </div>
           <div className="overflow-hidden rounded-2xl border border-slate-200">
             <img src="/images/biavati/68347937e1b75eb4da16a95c_ConstrutoraCelana_Litoral_Paranaense_3_-1024x1024.jpg" alt="Sobre a Biavati" className="h-full w-full object-cover" />
@@ -154,23 +151,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section id="contato" className="relative mx-auto max-w-6xl px-6 pb-16 sm:pb-24">
-        <div className="overflow-hidden rounded-2xl bg-slate-900 text-white">
-          <div className="grid gap-8 p-8 sm:grid-cols-2 sm:p-10">
-            <div>
-              <h2 className="font-serif text-2xl font-semibold">Converse com um advisor</h2>
-              <p className="mt-2 text-white/80">Receba uma seleção exclusiva de imóveis alinhados ao seu perfil.</p>
-            </div>
-            <div className="flex items-center gap-3">
-              <a href={whats} className="inline-flex w-full items-center justify-center rounded-md bg-accent-500 px-5 py-3 text-white font-medium hover:bg-accent-600 sm:w-auto">WhatsApp</a>
-              <a href="mailto:contato@biavati.com.br" className="inline-flex w-full items-center justify-center rounded-md border border-white/40 px-5 py-3 font-medium hover:bg-white/10 sm:w-auto">E-mail</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact CTA */}
+      {/* Contato */}
       <section id="contato" className="relative mx-auto max-w-6xl px-6 pb-16 sm:pb-24">
         <div className="overflow-hidden rounded-2xl bg-slate-900 text-white">
           <div className="grid gap-8 p-8 sm:grid-cols-2 sm:p-10">
@@ -188,3 +169,4 @@ export default function HomePage() {
     </div>
   )
 }
+
