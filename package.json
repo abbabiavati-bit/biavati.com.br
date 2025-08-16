@@ -8,6 +8,7 @@
     "build": "vite build && node scripts/static-exports.mjs",
     "start": "vite preview --port 3000",
     "preview": "vite preview --port 3000",
+    "favicons": "node scripts/make-favicons.mjs",
     "lint": "echo 'lint not configured'"
   },
   "dependencies": {
@@ -19,7 +20,9 @@
     "@types/react": "19.1.9",
     "@vitejs/plugin-react-swc": "^3.7.1",
     "autoprefixer": "^10.4.19",
+    "png-to-ico": "^2.1.8",
     "postcss": "^8.4.41",
+    "sharp": "^0.34.3",
     "tailwindcss": "^3.4.7",
     "typescript": "^5.5.4",
     "vite": "^5.4.19"

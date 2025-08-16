@@ -87,7 +87,7 @@ export default function HomePage() {
       {/* Statement block */}
       <section aria-label="Declaração" className="w-full py-12 sm:py-16 md:py-20">
         <div className="mx-auto max-w-5xl px-6 text-center">
-          <img src="/images/biavati/68210a4313a6fdaaadc7192d_Biavati.svg" alt="Biavati Imóveis" className="mx-auto h-10 w-auto sm:h-12" />
+          <img src="/logo.svg" alt="Biavati Imóveis" className="mx-auto h-10 w-auto sm:h-12" />
           <div className="mt-6 sm:mt-8">
             <p className="mx-auto text-xl sm:text-2xl md:text-3xl leading-snug text-slate-800 text-balance font-normal font-sans tracking-normal md:tracking-[0.005em]">
               Liberdade para ser. Tempo em meio à natureza. Espaço para amar. Energia para criar.
