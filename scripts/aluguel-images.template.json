@@ -1,0 +1,18 @@
+[
+  { "url": "https://example.com/path/to/triplex-infinity.webp", "dest": "public/placeholders/rental-triplex-infinity.webp" },
+  { "url": "https://example.com/path/to/triplex-beira-mar.webp", "dest": "public/placeholders/rental-triplex-beira-mar.webp" },
+  { "url": "https://example.com/path/to/triplex-sol.webp", "dest": "public/placeholders/rental-triplex-sol.webp" },
+  { "url": "https://example.com/path/to/triplex-premium.webp", "dest": "public/placeholders/rental-triplex-premium.webp" },
+  { "url": "https://example.com/path/to/suica-430.webp", "dest": "public/placeholders/rental-suica-430.webp" },
+  { "url": "https://example.com/path/to/canada-2069.webp", "dest": "public/placeholders/rental-canada-2069.webp" },
+  { "url": "https://example.com/path/to/canada-755.webp", "dest": "public/placeholders/rental-canada-755.webp" },
+  { "url": "https://example.com/path/to/betaras.webp", "dest": "public/placeholders/rental-betaras.webp" },
+  { "url": "https://example.com/path/to/solymar-2.webp", "dest": "public/placeholders/rental-solymar-2.webp" },
+  { "url": "https://example.com/path/to/ipanema-1059.webp", "dest": "public/placeholders/rental-ipanema-1059.webp" },
+  { "url": "https://example.com/path/to/canada-resort-302.webp", "dest": "public/placeholders/rental-canada-resort-302.webp" },
+  { "url": "https://example.com/path/to/canada-resort-301.webp", "dest": "public/placeholders/rental-canada-resort-301.webp" },
+  { "url": "https://example.com/path/to/canada-resort-202.webp", "dest": "public/placeholders/rental-canada-resort-202.webp" },
+  { "url": "https://example.com/path/to/canada-resort-201.webp", "dest": "public/placeholders/rental-canada-resort-201.webp" },
+  { "url": "https://example.com/path/to/canada-resort-102.webp", "dest": "public/placeholders/rental-canada-resort-102.webp" },
+  { "url": "https://example.com/path/to/canada-resort-101.webp", "dest": "public/placeholders/rental-canada-resort-101.webp" }
+]

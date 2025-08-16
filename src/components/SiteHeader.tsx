@@ -36,8 +36,8 @@ export default function SiteHeader() {
         }`
       }
     >
-      <div className="mx-auto grid h-[60px] max-w-6xl grid-cols-3 items-center px-6">
-        {/* Left group */}
+      <div className="mx-auto h-[60px] max-w-6xl px-4 flex items-center justify-between sm:grid sm:grid-cols-3 sm:px-6">
+        {/* Left group (desktop) / Brand (mobile) */}
         <nav className="hidden sm:flex items-center gap-6 lg:gap-8 text-[10px] uppercase tracking-[0.14em] text-slate-700 sm:text-xs sm:tracking-[0.18em]">
           {leftLinks.map((l) => (
             <a key={l.href} href={l.href} className="hover:text-slate-900 link-underline">
@@ -46,8 +46,8 @@ export default function SiteHeader() {
           ))}
         </nav>
 
-        {/* Center brand (uppercase serif) */}
-        <div className="flex items-center justify-center">
+        {/* Center brand desktop / Left brand mobile */}
+        <div className="flex items-center justify-start sm:justify-center">
           <a
             href="/"
             className="font-bold uppercase tracking-[0.18em] text-[11px] text-slate-900 sm:text-sm"

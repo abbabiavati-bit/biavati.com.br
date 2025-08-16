@@ -13,14 +13,31 @@ export default function HomePage() {
       <section aria-label="Hero" className="relative min-h-[80vh] w-full sm:min-h-screen">
         {/* Background video as cover */}
         <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-          <div className="absolute left-1/2 top-1/2 aspect-video h-[56.25vw] w-screen min-h-full min-w-full -translate-x-1/2 -translate-y-1/2">
-            <iframe
-              className="h-full w-full pointer-events-none"
-              src="https://www.youtube.com/embed/lO47EnS3uF4?autoplay=1&mute=1&loop=1&playlist=lO47EnS3uF4&controls=0&rel=0&modestbranding=1&playsinline=1"
-              title="Vídeo de destaque"
-              allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
-              allowFullScreen
-            />
+          {/* Mobile: height-driven sizing to avoid letterboxing */}
+          <div className="absolute inset-0 flex sm:hidden items-center justify-center">
+            <div className="absolute left-1/2 top-1/2 h-screen w-[177.78vh] -translate-x-1/2 -translate-y-1/2">
+              <iframe
+                className="h-full w-full pointer-events-none"
+                src="https://www.youtube.com/embed/lO47EnS3uF4?autoplay=1&mute=1&loop=1&playlist=lO47EnS3uF4&controls=0&rel=0&modestbranding=1&playsinline=1"
+                title="Vídeo de destaque"
+                allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+          </div>
+          {/* Desktop/tablet: width-driven sizing */}
+          <div className="absolute inset-0 hidden sm:flex items-center justify-center">
+            <div className="absolute left-1/2 top-1/2 w-screen h-[56.25vw] -translate-x-1/2 -translate-y-1/2">
+              <iframe
+                className="h-full w-full pointer-events-none"
+                src="https://www.youtube.com/embed/lO47EnS3uF4?autoplay=1&mute=1&loop=1&playlist=lO47EnS3uF4&controls=0&rel=0&modestbranding=1&playsinline=1"
+                title="Vídeo de destaque"
+                allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
           </div>
           <div className="absolute inset-0 bg-black/30" />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/35 to-transparent" />

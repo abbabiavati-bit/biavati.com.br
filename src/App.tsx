@@ -2,6 +2,7 @@ import SiteHeader from '@/components/SiteHeader'
 import HomePage from '@/pages/HomePage'
 import BlogIndex from '@/pages/BlogIndex'
 import BlogPost from '@/pages/BlogPost'
+import AluguelDetail from '@/pages/AluguelDetail'
 import { useEffect, useState } from 'react'
 import { getWhatsAppLink } from '@/lib/links'
 import Compra from '@/pages/Compra'
@@ -27,6 +28,10 @@ export default function App() {
     if (path === '/compra') return <Compra />
     if (path === '/venda') return <Venda />
     if (path === '/aluguel') return <Aluguel />
+    if (path.startsWith('/aluguel/')) {
+      const slug = path.replace(/^\/aluguel\//, '').replace(/\/$/, '')
+      return <AluguelDetail slug={slug} />
+    }
     if (path === '/stories') {
       // simple client-side redirect to /blog
       if (typeof window !== 'undefined') window.history.replaceState({}, '', '/blog');
