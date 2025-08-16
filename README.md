@@ -17,6 +17,7 @@ Vite + React + Tailwind CSS website to promote real-estate services in Paraná, 
 - `src/lib/` — helpers (links, media parsing).
 - `src/styles/globals.css` — Tailwind base/components/utilities.
 - `public/` — static assets (`logo.svg`, `favicon.svg`).
+ 
 - Config — `vite.config.ts`, `tailwind.config.ts`, `postcss.config.js`, `tsconfig.json`.
 - `tests/` — add when test suite is introduced.
 
@@ -25,6 +26,8 @@ Vite + React + Tailwind CSS website to promote real-estate services in Paraná, 
 - Branding: replace `public/logo.svg` and `public/favicon.svg`.
 - Contact: WhatsApp link is generated via env in `src/lib/links.ts`; email text lives in `src/components/SiteHeader.tsx` and `src/App.tsx`.
 - Hero media: configure via env in `src/lib/media.ts`.
+
+ 
 
 ## Deploy on Render (Static Site)
 

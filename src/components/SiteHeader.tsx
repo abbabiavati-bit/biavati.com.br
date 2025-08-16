@@ -3,20 +3,16 @@ import { useEffect, useState } from 'react'
 import { getWhatsAppLink } from '@/lib/links'
 
 const leftLinks = [
-  { href: '#imoveis', label: 'Imóveis' },
-  { href: '#journal', label: 'Journal' },
+  { href: '/compra', label: 'Compra' },
+  { href: '/venda', label: 'Venda' },
+  { href: '/aluguel', label: 'Aluguel' },
 ]
 
 const rightLinks = [
-  { href: '#sobre', label: 'Sobre' },
-  { href: '#contato', label: 'Contato' },
+  { href: '/blog', label: 'Blog' },
 ]
 
-const mobileLinks = [
-  ...leftLinks,
-  ...rightLinks,
-  { href: '/atami/index.html', label: 'Atami & Solécia' },
-]
+const mobileLinks = [...leftLinks, ...rightLinks]
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false)
@@ -50,11 +46,14 @@ export default function SiteHeader() {
           ))}
         </nav>
 
-        {/* Center logo */}
+        {/* Center brand (uppercase serif) */}
         <div className="flex items-center justify-center">
-          <a href="/" className="flex items-center gap-2 font-semibold tracking-tight">
-            <img src="/images/biavati/68210a4313a6fdaaadc7192d_Biavati.svg" alt="Biavati" className="h-6 w-auto" />
-            <span className="hidden sm:inline">Biavati Imóveis</span>
+          <a
+            href="/"
+            className="font-bold uppercase tracking-[0.18em] text-[11px] text-slate-900 sm:text-sm"
+            style={{ fontFamily: 'var(--brand-font)' }}
+          >
+            BIAVATI IMÓVEIS
           </a>
         </div>
 
@@ -66,6 +65,14 @@ export default function SiteHeader() {
                 {l.label}
               </a>
             ))}
+            <a
+              href={whats}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-full px-3 py-1.5 ring-1 ring-[var(--brand-accent)] text-[10px] uppercase tracking-[0.14em] text-[var(--brand-accent)] hover:bg-[var(--brand-accent)]/10 sm:text-xs"
+            >
+              WhatsApp
+            </a>
           </nav>
           <button
             type="button"
@@ -85,9 +92,8 @@ export default function SiteHeader() {
         <div className="fixed inset-0 z-50 bg-white text-slate-900" role="dialog" aria-modal="true">
           <div className="mx-auto flex h-full max-w-6xl flex-col px-6 py-5">
             <div className="flex items-center justify-between">
-              <a href="/" className="flex items-center gap-2 font-semibold tracking-tight" onClick={() => setOpen(false)}>
-                <img src="/images/biavati/68210a4313a6fdaaadc7192d_Biavati.svg" alt="Biavati" className="h-6 w-auto" />
-                <span>Biavati Imóveis</span>
+              <a href="/" className="font-semibold tracking-tight" onClick={() => setOpen(false)}>
+                Biavati Imóveis
               </a>
               <button
                 type="button"
@@ -120,8 +126,10 @@ export default function SiteHeader() {
             <div className="mt-auto flex items-center justify-between border-t border-slate-200 pt-4">
               <a
                 href={whats}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="inline-flex items-center rounded-md bg-slate-900 px-4 py-2 text-white text-sm font-medium uppercase tracking-wide hover:bg-black"
+                className="inline-flex items-center rounded-md bg-accent-500 px-4 py-2 text-white text-sm font-medium uppercase tracking-wide hover:bg-accent-600"
               >
                 WhatsApp
               </a>

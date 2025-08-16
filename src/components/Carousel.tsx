@@ -29,6 +29,8 @@ export default function Carousel({ items }: { items: Item[] }) {
                       message: `Olá, sou [Seu Nome]. Vi o imóvel '${p.title}${p.loc ? ' - ' + p.loc : ''}${p.ref ? ' (ref: ' + p.ref + ')' : ''}' no site e gostaria de mais detalhes (metragem, valor, condições e fotos). É possível agendar uma visita?`
                     })
                   }
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm font-medium text-accent-700 hover:text-accent-800"
                 >
                   Solicitar informações

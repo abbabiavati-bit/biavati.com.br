@@ -70,3 +70,4 @@ lerna-debug.log
 # Misc
 *.tgz
 node_repl_history
+*.pid

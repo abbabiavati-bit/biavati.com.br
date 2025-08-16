@@ -1,172 +1,136 @@
 import { getWhatsAppLink } from '@/lib/links'
-import { getHeroMedia } from '@/lib/media'
-import HeroMedia from '@/components/HeroMedia'
 import Carousel from '@/components/Carousel'
+import BlogSection from '@/components/BlogSection'
+import BuyingWithUsSection from '@/components/BuyingWithUsSection'
+import RentingWithUsSection from '@/components/RentingWithUsSection'
+import LifestyleSection from '@/components/LifestyleSection'
 
 export default function HomePage() {
   const whats = getWhatsAppLink()
-  const hero = getHeroMedia()
   return (
     <div>
-      {/* Hero */}
-      <section className="relative h-[78vh] min-h-[560px] w-full">
-        <img
-          src="/images/biavati/68347948ad3470d7bcedca5e_DJI_0508-1536x864.webp"
-          alt="Litoral do Paraná"
-          className="absolute inset-0 h-full w-full object-cover"
-          loading="eager"
-        />
-        {hero && <HeroMedia media={hero} />}
-        <div className="absolute inset-0 bg-slate-900/45" />
-        <div className="relative z-10 mx-auto flex h-full max-w-6xl items-center px-6">
-          <div className="max-w-2xl text-white">
-            <p className="text-sm/6 uppercase tracking-widest text-white/80">Paraná, Brasil</p>
-            <h1 className="mt-3 font-serif text-5xl font-semibold tracking-tight sm:text-6xl">Imóveis selecionados</h1>
-            <p className="mt-2 font-serif text-2xl/8 sm:text-3xl/9 text-white/90">À beira-mar e nas cidades do Paraná</p>
-            <p className="mt-4 text-white/85">
-              Assessoria personalizada para compra e venda de imóveis de alto padrão no litoral e nas principais cidades do Paraná.
+      {/* Hero (video background) */}
+      <section aria-label="Hero" className="relative min-h-[80vh] w-full sm:min-h-screen">
+        {/* Background video as cover */}
+        <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+          <div className="absolute left-1/2 top-1/2 aspect-video h-[56.25vw] w-screen min-h-full min-w-full -translate-x-1/2 -translate-y-1/2">
+            <iframe
+              className="h-full w-full pointer-events-none"
+              src="https://www.youtube.com/embed/lO47EnS3uF4?autoplay=1&mute=1&loop=1&playlist=lO47EnS3uF4&controls=0&rel=0&modestbranding=1&playsinline=1"
+              title="Vídeo de destaque"
+              allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+              allowFullScreen
+            />
+          </div>
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/35 to-transparent" />
+        </div>
+
+        {/* Overlay content centered absolutely */}
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center">
+          <div className="max-w-4xl px-4 text-white">
+            <p className="text-[11px] uppercase tracking-[0.22em] text-white/85">Paraná, Brasil</p>
+            <h1
+              className="mt-3 text-2xl font-bold uppercase leading-[0.95] tracking-[0.08em] sm:text-4xl md:text-6xl"
+              style={{ fontFamily: 'var(--brand-font)' as string, textShadow: '0 1px 2px rgba(0,0,0,0.45)' }}
+            >
+              SEU LUGAR NO PARANÁ
+            </h1>
+            <p
+              className="mt-4 mx-auto max-w-[60rem] text-base text-white/90 sm:text-lg"
+              style={{ fontFamily: 'var(--brand-font-sans)' as string }}
+            >
+              Curadoria de imóveis exclusivos no litoral e nas principais cidades do estado.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#imoveis" className="inline-flex items-center justify-center rounded-md bg-accent-500 px-5 py-3 text-white font-medium hover:bg-accent-600">
-                Explorar imóveis
+            <div className="mt-6 flex flex-col justify-center gap-4 md:flex-row">
+              <a
+                href="/compra"
+                aria-label="Descubra o seu lugar"
+                className="inline-flex items-center justify-center rounded-full px-7 py-3 text-sm font-medium text-white transition hover:opacity-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                style={{ backgroundColor: 'var(--brand-accent)', fontFamily: 'var(--brand-font-sans)' as string }}
+              >
+                Descubra o seu lugar →
               </a>
-              <a href={whats} className="inline-flex items-center justify-center rounded-md border border-white/40 px-5 py-3 text-white hover:bg-white/10">
-                Fale com um advisor
+              <a
+                href={whats}
+                target="_blank"
+                rel="noopener"
+                aria-label="Fale no WhatsApp"
+                className="inline-flex items-center gap-2 text-sm font-medium text-white/90 underline underline-offset-4 hover:text-white"
+                style={{ fontFamily: 'var(--brand-font-sans)' as string }}
+              >
+                <svg aria-hidden viewBox="0 0 24 24" className="h-4 w-4"><path fill="currentColor" d="M20.52 3.48A11.94 11.94 0 0012.06 0C5.43 0 .06 5.37.06 12a11.9 11.9 0 001.67 6.12L0 24l6-1.63A11.94 11.94 0 0012.06 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.2-3.54-8.52zM12.06 22a9.93 9.93 0 01-5.05-1.39l-.36-.21-3.56.97.95-3.47-.24-.36A10 10 0 1122.06 12 9.99 9.99 0 0112.06 22zm5.47-7.55c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15s-.77.97-.95 1.17c-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.9 1.22 3.11c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.5 1.69.64.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+                Fale no WhatsApp
               </a>
             </div>
-            {hero && hero.kind === 'iframe' && (
-              <div className="mt-3">
-                <a
-                  href={hero.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-white/80 hover:text-white link-underline"
-                >
-                  Assistir no site oficial →
-                </a>
-              </div>
-            )}
           </div>
         </div>
       </section>
 
-      {/* Destaques */}
-      <section id="imoveis" className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
-        <div className="flex items-end justify-between">
-          <div>
-            <h2 className="font-serif text-3xl font-semibold">Destaques</h2>
-            <div className="mt-2 h-0.5 w-16 bg-accent-500" />
-            <p className="mt-3 text-slate-700">Uma seleção de oportunidades recentes.</p>
-          </div>
-          <a href="#contato" className="hidden text-sm font-medium text-primary-700 hover:text-primary-800 link-underline sm:inline">Ver todos →</a>
-        </div>
-        <div className="mt-8 sm:hidden">
-          <Carousel
-            items={[
-              { img: '/images/biavati/683479760428b0607828df06_Praia-de-Pontal-do-Sul-small.webp', title: 'Casa pé na areia', loc: 'Pontal do Sul', ref: 'BIA-001' },
-              { img: '/images/biavati/68347a01af8c56fc54df65a1_litoral-parana.webp', title: 'Apartamento vista mar', loc: 'Litoral do PR', ref: 'BIA-002' },
-              { img: '/images/biavati/68347c6c2c42ca1815e5dc63_foto_edilson_tadeu_giordano_14_vista_praia_de_caioba.jpg', title: 'Terreno exclusivo', loc: 'Caiobá', ref: 'BIA-003' },
-            ]}
-          />
-        </div>
-        <div className="mt-8 hidden gap-6 sm:grid sm:grid-cols-2 lg:grid-cols-3">
-          {[ 
-            { img: '/images/biavati/683479760428b0607828df06_Praia-de-Pontal-do-Sul-small.webp', title: 'Casa pé na areia', loc: 'Pontal do Sul', ref: 'BIA-001' },
-            { img: '/images/biavati/68347a01af8c56fc54df65a1_litoral-parana.webp', title: 'Apartamento vista mar', loc: 'Litoral do PR', ref: 'BIA-002' },
-            { img: '/images/biavati/68347c6c2c42ca1815e5dc63_foto_edilson_tadeu_giordano_14_vista_praia_de_caioba.jpg', title: 'Terreno exclusivo', loc: 'Caiobá', ref: 'BIA-003' },
-          ].map((p) => (
-            <article key={p.title} className="group relative overflow-hidden rounded-xl">
-              <img src={p.img} alt={p.title} className="aspect-[4/3] h-auto w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-90" />
-              <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                <h3 className="font-medium">{p.title}</h3>
-                <p className="mt-1 text-sm/6 text-white/85">{p.loc}{p.ref ? ` · ${p.ref}` : ''}</p>
-                <div className="mt-3">
-                  <a
-                    href={getWhatsAppLink({
-                      message: `Olá, sou [Seu Nome]. Vi o imóvel '${p.title}${p.loc ? ' - ' + p.loc : ''}${p.ref ? ' (ref: ' + p.ref + ')' : ''}' no site e gostaria de mais detalhes (metragem, valor, condições e fotos). É possível agendar uma visita?`
-                    })}
-                    className="inline-block rounded-md bg-white/95 px-3 py-2 text-xs font-medium uppercase tracking-wide text-slate-900 hover:bg-white"
-                  >
-                    Solicitar informações
-                  </a>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-        <div className="mt-6 sm:hidden">
-          <a href="#contato" className="text-sm font-medium text-primary-700 hover:text-primary-800 link-underline">Ver todos →</a>
-        </div>
-      </section>
-
-      {/* Sobre */}
-      <section id="sobre" className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-          <div>
-            <h2 className="font-serif text-3xl font-semibold">Sobre</h2>
-            <div className="mt-2 h-0.5 w-16 bg-accent-500" />
-            <p className="mt-4 text-slate-700">
-              Biavati Imóveis atua com curadoria e assessoria completa na compra e venda de imóveis
-              residenciais e comerciais no litoral e nas principais cidades do Paraná. Nossa abordagem é
-              discreta, precisa e orientada a resultado, com foco em apresentação, posicionamento e negociação.
+      {/* Statement block */}
+      <section aria-label="Declaração" className="w-full py-12 sm:py-16 md:py-20">
+        <div className="mx-auto max-w-5xl px-6 text-center">
+          <img src="/images/biavati/68210a4313a6fdaaadc7192d_Biavati.svg" alt="Biavati Imóveis" className="mx-auto h-10 w-auto sm:h-12" />
+          <div className="mt-6 sm:mt-8">
+            <p className="mx-auto text-xl sm:text-2xl md:text-3xl leading-snug text-slate-800 text-balance font-normal font-sans tracking-normal md:tracking-[0.005em]">
+              Liberdade para ser. Tempo em meio à natureza. Espaço para amar. Energia para criar.
+              A dança encantadora entre o mar e o céu. Magia atemporal unida à sofisticação do século XXI.
+              Um lugar para pertencer. É por isso que escolhemos viver aqui. Talvez seja também a razão para você escolher este lugar.
+              Encontre o seu lar conosco.
             </p>
-            <p className="mt-3 text-slate-700">Indicamos parceiros de confiança para reforma, interiores e administração patrimonial.</p>
-          </div>
-          <div className="overflow-hidden rounded-2xl border border-slate-200">
-            <img src="/images/biavati/68347937e1b75eb4da16a95c_ConstrutoraCelana_Litoral_Paranaense_3_-1024x1024.jpg" alt="Sobre a Biavati" className="h-full w-full object-cover" />
           </div>
         </div>
       </section>
 
-      {/* Journal */}
-      <section id="journal" className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
-        <div className="flex items-end justify-between gap-4">
-          <div>
-            <h2 className="font-serif text-3xl font-semibold">Journal</h2>
-            <div className="mt-2 h-0.5 w-16 bg-accent-500" />
-            <p className="mt-3 text-slate-700">Notas sobre mercado, arquitetura e litoral do Paraná.</p>
+      {/* Buying with us (component) */}
+      <div id="compradores">
+        <BuyingWithUsSection />
+      </div>
+
+      {/* Renting with us (component) */}
+      <RentingWithUsSection />
+
+      {/* Lifestyle (Island) */}
+      <LifestyleSection />
+
+      
+
+
+      {/* Sobre Nós / Nossa Equipe (match Our People style) */}
+      <section
+        id="sobre"
+        aria-label="Nossa Equipe"
+        className="border-t border-[var(--brand-border)] bg-[#C0954F] py-20 md:py-24 text-white"
+      >
+        <div className="mx-auto max-w-6xl px-6">
+          {/* Intro on gold background */}
+          <div className="mx-auto max-w-3xl text-center">
+            <h2
+              className="text-3xl font-semibold tracking-tight sm:text-4xl"
+              style={{ fontFamily: 'var(--brand-font)' as string }}
+            >
+              Sobre Nós
+            </h2>
+            <div className="mx-auto mt-4 max-w-3xl text-left sm:text-center">
+              <p className="text-base sm:text-lg text-white/95" style={{ fontFamily: 'var(--brand-font-sans)' as string }}>
+                A Biavati Imóveis atua com curadoria e assessoria completa na compra e venda de imóveis residenciais e comerciais no litoral e nas principais cidades do Paraná. Nossa abordagem é discreta, precisa e orientada a resultados, com foco na apresentação, no posicionamento e na negociação.
+              </p>
+              <p className="mt-4 text-base sm:text-lg text-white/95" style={{ fontFamily: 'var(--brand-font-sans)' as string }}>
+                Mais do que imóveis, conhecemos profundamente a região, sua cultura e seu modo de viver. É aqui que construímos nossas relações e é daqui que vem a nossa força. Compartilhamos esse conhecimento e essa rede de confiança com cada cliente, indicando parceiros de confiança para reforma, interiores e gestão patrimonial.
+              </p>
+              <p className="mt-4 text-base sm:text-lg text-white/95" style={{ fontFamily: 'var(--brand-font-sans)' as string }}>
+                Estamos ao seu lado em cada etapa, com transparência, dedicação e visão estratégica, para que você encontre não apenas uma propriedade, mas o lugar certo para chamar de lar.
+              </p>
+            </div>
           </div>
-          <div className="ml-auto hidden sm:block">
-            <a href="#contato" className="text-sm font-medium text-primary-700 hover:text-primary-800 link-underline">Ver todas as notas →</a>
-          </div>
-        </div>
-        <div className="mt-8 space-y-8">
-          {[ 
-            { img: '/images/biavati/68347d27d35310db39b20f8a_ilha-do-mel-praia-encantadas.webp', title: 'Arquitetura e mar: casas com vista', blurb: 'Como valorizar a relação entre interior e exterior nas residências litorâneas.' },
-            { img: '/images/atami/DJI_0530-1024x576.jpg', title: 'Mercado no litoral do PR', blurb: 'Movimentos recentes em Caiobá, Pontal do Sul e Ilha do Mel.' },
-            { img: '/images/biavati/6834711b6fef776e21862037_engorda1-1.jpg', title: 'Curadoria de oportunidades', blurb: 'Processos e critérios para selecionar imóveis com liquidez e potencial.' },
-          ].map((p) => (
-            <article key={p.title} className="grid gap-4 sm:grid-cols-3 sm:items-center">
-              <div className="overflow-hidden rounded-xl border border-slate-200">
-                <img src={p.img} alt={p.title} className="h-44 w-full object-cover sm:h-36" />
-              </div>
-              <div className="sm:col-span-2">
-                <h3 className="text-lg font-medium">{p.title}</h3>
-                <p className="mt-2 text-slate-700">{p.blurb}</p>
-                <a href="#contato" className="mt-3 inline-block text-sm font-medium text-primary-700 hover:text-primary-800 link-underline">Ler mais →</a>
-              </div>
-            </article>
-          ))}
+
+          {/* No team grid; section intentionally ends with copy only */}
         </div>
       </section>
 
-      {/* Contato */}
-      <section id="contato" className="relative mx-auto max-w-6xl px-6 pb-16 sm:pb-24">
-        <div className="overflow-hidden rounded-2xl bg-slate-900 text-white">
-          <div className="grid gap-8 p-8 sm:grid-cols-2 sm:p-10">
-            <div>
-              <h2 className="font-serif text-2xl font-semibold">Converse com um advisor</h2>
-              <p className="mt-2 text-white/80">Receba uma seleção exclusiva de imóveis alinhados ao seu perfil.</p>
-            </div>
-            <div className="flex items-center gap-3">
-              <a href={whats} className="inline-flex w-full items-center justify-center rounded-md bg-accent-500 px-5 py-3 text-white font-medium hover:bg-accent-600 sm:w-auto">WhatsApp</a>
-              <a href="mailto:contato@biavati.com.br" className="inline-flex w-full items-center justify-center rounded-md border border-white/40 px-5 py-3 font-medium hover:bg-white/10 sm:w-auto">E-mail</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Blog */}
+      <BlogSection />
+
     </div>
   )
 }
-
