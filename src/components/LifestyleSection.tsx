@@ -3,8 +3,8 @@ import React from 'react'
 type Item = { title: string; img: string; href?: string; alt?: string }
 
 const defaultItems: Item[] = [
-  { title: 'Matinhos', img: '/images/locations/lifestyle-2.png', href: '/locais/matinhos', alt: 'Matinhos — litoral' },
-  { title: 'Caiobá', img: '/images/locations/lifestyle-3.png', href: '/locais/caioba', alt: 'Caiobá — litoral' },
+  { title: 'Matinhos', img: '/images/locations/lifestyle-2.png', href: '/blog', alt: 'Matinhos — litoral' },
+  { title: 'Caiobá', img: '/images/locations/lifestyle-3.png', href: '/blog', alt: 'Caiobá — litoral' },
 ]
 
 export default function LifestyleSection({

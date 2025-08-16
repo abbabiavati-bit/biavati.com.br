@@ -1,6 +1,6 @@
 export function getWhatsAppLink(opts?: { message?: string }) {
   const env = (import.meta as any).env || {}
-  const phone = (env.VITE_WHATSAPP_NUMBER || env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5541999999999')
+  const phone = (env.VITE_WHATSAPP_NUMBER || env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5541996091053')
     .toString()
     .replace(/\D/g, '')
   const defaultMessage = (
@@ -15,6 +15,14 @@ export function getWhatsAppLink(opts?: { message?: string }) {
     ].join(' ')
   )
   const message = (opts?.message ?? defaultMessage).trim()
-  const base = `https://wa.me/${phone}`
-  return message ? `${base}?text=${encodeURIComponent(message)}` : base
+
+  // Build using the WhatsApp API format provided by the client.
+  const base = 'https://api.whatsapp.com/send/'
+  const params = new URLSearchParams()
+  params.set('phone', phone)
+  if (message) params.set('text', message)
+  params.set('type', 'phone_number')
+  params.set('app_absent', '0')
+
+  return `${base}?${params.toString()}`
 }

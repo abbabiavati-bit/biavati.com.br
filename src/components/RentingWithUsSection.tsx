@@ -42,7 +42,7 @@ const rentals: Property[] = [
 export default function RentingWithUsSection({ properties = rentals }: { properties?: Property[] }) {
   return (
     <section
-      aria-label="Renting With Us"
+      aria-label="Alugar Conosco"
       className="border-t border-[var(--brand-border)] bg-[var(--brand-bg)] py-20 md:py-24 text-[var(--brand-fg)]"
     >
       <div className="mx-auto max-w-6xl px-6">
@@ -51,7 +51,7 @@ export default function RentingWithUsSection({ properties = rentals }: { propert
             className="text-3xl font-semibold tracking-tight sm:text-4xl"
             style={{ fontFamily: 'var(--brand-font)' as string }}
           >
-            Renting With Us
+            Alugar Conosco
           </h2>
         </div>
 
@@ -62,9 +62,7 @@ export default function RentingWithUsSection({ properties = rentals }: { propert
               className="group relative overflow-hidden rounded-xl border border-[var(--brand-border)] bg-[var(--brand-bg)]"
             >
               <a
-                href={p.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/aluguel"
                 className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-accent)]"
               >
                 <div className="relative">
@@ -75,7 +73,7 @@ export default function RentingWithUsSection({ properties = rentals }: { propert
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity group-hover:opacity-100">
                     <span className="rounded-full bg-white/95 px-4 py-2 text-sm font-medium text-slate-900 transition hover:opacity-90">
-                      View Details
+                      Ver detalhes
                     </span>
                   </div>
                 </div>
@@ -107,4 +105,3 @@ export default function RentingWithUsSection({ properties = rentals }: { propert
     </section>
   )
 }
-

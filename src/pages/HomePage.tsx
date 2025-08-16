@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero (video background) */}
-      <section aria-label="Hero" className="relative min-h-[80vh] w-full sm:min-h-screen">
+      <section aria-label="Destaque" className="relative min-h-[80vh] w-full sm:min-h-screen">
         {/* Background video as cover */}
         <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
           {/* Mobile: height-driven sizing to avoid letterboxing */}

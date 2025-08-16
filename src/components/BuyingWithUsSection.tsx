@@ -39,7 +39,7 @@ const defaultProperties: Property[] = [
 export default function BuyingWithUsSection({ properties = defaultProperties }: { properties?: Property[] }) {
   return (
     <section
-      aria-label="Buying With Us"
+      aria-label="Comprar Conosco"
       className="border-t border-[var(--brand-border)] bg-[var(--brand-bg)] py-20 md:py-24 text-[var(--brand-fg)]"
     >
       <div className="mx-auto max-w-6xl px-6">
@@ -48,7 +48,7 @@ export default function BuyingWithUsSection({ properties = defaultProperties }: 
             className="text-3xl font-semibold tracking-tight sm:text-4xl"
             style={{ fontFamily: 'var(--brand-font)' as string }}
           >
-            Buying With Us
+            Comprar Conosco
           </h2>
         </div>
 
@@ -58,7 +58,7 @@ export default function BuyingWithUsSection({ properties = defaultProperties }: 
               key={p.name}
               className="group relative overflow-hidden rounded-xl border border-[var(--brand-border)] bg-[var(--brand-bg)]"
             >
-              <a href={p.href} target="_blank" rel="noopener noreferrer" className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-accent)]">
+              <a href="/compra" className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-accent)]">
                 <div className="relative">
                   <img
                     src={p.img}
@@ -66,7 +66,7 @@ export default function BuyingWithUsSection({ properties = defaultProperties }: 
                     className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105 md:h-80"
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity group-hover:opacity-100">
-                    <span className="rounded-full bg-white/95 px-4 py-2 text-sm font-medium text-slate-900 transition hover:opacity-90">View Details</span>
+                    <span className="rounded-full bg-white/95 px-4 py-2 text-sm font-medium text-slate-900 transition hover:opacity-90">Ver detalhes</span>
                   </div>
                 </div>
                 <div className="px-5 pb-5">
